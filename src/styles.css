@@ -274,3 +274,8 @@ html.embedded .modal-back { position: absolute; align-items: flex-start; padding
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation-duration: .01ms !important; animation-delay: 0ms !important; }
 }
+
+/* Computers with a mouse and real keyboard: hide the on-screen keyboard */
+@media (hover: hover) and (pointer: fine) {
+  .keyboard { display: none; }
+}

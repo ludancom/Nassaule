@@ -1,6 +1,6 @@
 # Nasscade
 
-A word game for the Nassau Weekly. Eight hidden five-letter words, each with a clue.
+A word game for the Nassau Weekly. Eight hidden five-letter words, each with a clue. 
 Every guess is checked against all eight at once, and letters light up wherever they're
 in the exact same spot. Solve one word and its letters cascade into the others.
 No guess limit: you're racing the clock. Hints reveal a letter for +15 seconds.
