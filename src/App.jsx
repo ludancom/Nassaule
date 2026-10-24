@@ -245,7 +245,7 @@ export default function App() {
 
   // ---------- share ----------
   const shareText = () => {
-    const strip = guesses.map((g) => (g.solved > 1 ? '🟧' : g.solved ? '🟩' : g.lit ? '🟨' : '⬛')).join('');
+    const strip = guesses.map((g) => (g.solved > 1 ? '🟧' : g.solved ? '⬛' : g.lit ? '🟨' : '⬜')).join('');
     const hintPart = hints ? ` · ${hints} hint${hints > 1 ? 's' : ''}` : '';
     return [
       `${GAME_NAME} #${puzzle.number ?? ''} · ${puzzle.title}`.trim(),
