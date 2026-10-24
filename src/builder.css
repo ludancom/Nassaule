@@ -20,6 +20,8 @@
   background: var(--card); border: 1px solid var(--faint); padding: 8px;
 }
 .b-row.has-problem { border-color: var(--pink); }
+/* The game board gives .num a grid-area; undo that here so the builder's columns line up. */
+.b-row .num { grid-area: auto; }
 .b-answer { font-family: var(--sans) !important; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; }
 .b-links { font-family: var(--sans); font-size: 13px; font-weight: 700; color: var(--muted); text-align: right; }
 .b-move { display: flex; gap: 2px; }
