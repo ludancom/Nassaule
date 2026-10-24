@@ -92,3 +92,34 @@ the screen. Consider also linking straight to the Vercel URL (or a subdomain lik
 - Times are stored per browser. A shared leaderboard would need a small backend
   (e.g. a Vercel serverless function plus a database) and is a good next step if people
   get competitive.
+
+## Tech stack
+
+| Part | What we use | What it does |
+|---|---|---|
+| UI | [React](https://react.dev) 19 | Builds the game's screens from components (`App.jsx`, `Keyboard.jsx`, `Builder.jsx`) and redraws them when the game state changes |
+| Build tool | [Vite](https://vite.dev) 8 | Runs the local dev server (`npm run dev`) and bundles the site for production (`npm run build`) |
+| Game logic | Plain JavaScript (`src/game.js`) | The rules: which letters light up, when words clear. Shared by the game and the builder |
+| Styling | Plain CSS (`src/styles.css`) | All colors, fonts and layout. Colors are CSS variables at the top |
+| Fonts | [Google Fonts](https://fonts.google.com): Source Serif 4 and Figtree | Serif for the wordmark and bylines, heavy sans for headings, matching nassauweekly.com |
+| Puzzle data | Static JSON files (`public/puzzles/`) | One file per puzzle plus `index.json`. No database |
+| Word list | `public/words.json` | ~12,500 valid five-letter guesses, from the [word-list](https://github.com/sindresorhus/word-list) package |
+| Player data | Browser `localStorage` | Saves each player's progress and times on their own device. No accounts or server |
+| Hosting | [Vercel](https://vercel.com) | Rebuilds and redeploys automatically on every push to GitHub |
+| Embedding | `<iframe>` + `postMessage` | Puts the game on the WordPress site; the game tells the page its height so the frame resizes |
+| Runtime requirement | [Node.js](https://nodejs.org) (LTS) | Only needed to develop and build, not to play |
+
+There is no backend. A shared leaderboard would be the first thing to need one.
+
+
+## Credits
+
+Nasscade is inspired by [Rushle](https://rushle.io), a daily word game by
+u/wallshark (AKA Brandon). ([original post on r/wordgames](https://www.reddit.com/r/wordgames/comments/1s7qlwx/i_built_a_daily_word_game_where_one_guess_can/)).
+Its core idea is the one we built on: every guess is checked against all the
+hidden words at once, letters only light up in their exact position, and solving
+one word cascades letters into the rest.
+
+What Nasscade changes: eight words instead of twenty-six, a clue for every word
+written by the Nass, a count-up clock instead of a miss limit, and styling to
+match the Nassau Weekly. If you like this, go play the original!

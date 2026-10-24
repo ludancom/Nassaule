@@ -79,10 +79,12 @@ html.embedded .app { padding-bottom: 24px; }
   --line: #c9c6bf;          /* empty tile outline */
   --label: #8a8680;         /* row labels */
   --chain-1: #111111;       /* cleared on its own */
-  --chain-2: #2f5a6b;       /* x2: cover teal */
-  --chain-3: #6c8f68;       /* x3: sage */
-  --chain-4: #e0896b;       /* x4: cover pink */
-  --chain-5: #c8432d;       /* x5+: hot */
+  --chain-2: #e0896b;       /* x2++: orange */
+  --chain-3: #e0896b;
+  --chain-4: #e0896b;
+  --chain-5: #e0896b;       
+
+  --lit: #ecc55c;           /* cleared some letters */
 }
 .progress { height: 5px; background: #e6e3dc; border-radius: 99px; margin-top: 12px; overflow: hidden; }
 .progress-fill {
@@ -212,7 +214,7 @@ html.embedded .app { padding-bottom: 24px; }
 .stats { font-size: 16px; margin: 10px 0 12px; }
 .strip { display: flex; flex-wrap: wrap; justify-content: center; gap: 4px; max-width: 360px; }
 .dot { width: 16px; height: 16px; background: var(--faint); }
-.dot-lit { background: var(--pink); }
+.dot-lit { background: var(--lit); }
 .dot-solved { background: var(--ink); }
 .msg-wrap { margin-top: 10px; }
 .fine { font-size: 13px; color: var(--muted); margin: 12px 0 0; }

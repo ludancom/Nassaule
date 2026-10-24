@@ -457,6 +457,16 @@ export default function App() {
             <li>When every letter of a word is lit, it clears. One good guess can cascade across the board, and clearing several words at once makes a <b>chain</b>. Cleared words are colored by chain size: black, then teal ×2, sage ×3, pink ×4, red ×5+.</li>
             <li>There's no guess limit. You're racing the clock. Stuck? Tap a clue and reveal a letter for <b>+{HINT_PENALTY_SECONDS} seconds</b>.</li>
           </ol>
+          <div className="help-legend">
+            <p><b>Your results</b>, one square per guess:</p>
+            <ul>
+              <li>⬜ Nothing lined up</li>
+              <li>🟨 Lit some letters</li>
+              <li>⬛ Cleared a word</li>
+              <li>🟧 Chain: cleared two or more words at once</li>
+            </ul>
+          </div>
+
           <div className="help-example">
             <p>If the answer is <b>CRAMS</b> and you guess <b>GRADE</b>:</p>
             <span className="tiles">
