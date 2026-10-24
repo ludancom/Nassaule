@@ -9,7 +9,7 @@ export function useIframeHeight() {
     document.documentElement.classList.add('embedded');
     const send = () => {
       const height = Math.ceil(document.documentElement.getBoundingClientRect().height);
-      window.parent.postMessage({ type: 'nasscade:height', height }, '*');
+      window.parent.postMessage({ type: 'Nassaule:height', height }, '*');
     };
     const ro = new ResizeObserver(send);
     ro.observe(document.documentElement);

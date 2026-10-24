@@ -1,6 +1,6 @@
 // Saves each player's progress in their own browser (no server needed).
 // Progress survives a refresh, so restarting can't reset the clock.
-const KEY = 'nasscade:v1';
+const KEY = 'Nassaule:v1';
 
 function readAll() {
   try {

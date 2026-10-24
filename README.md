@@ -1,4 +1,4 @@
-# Nasscade
+# Nassaule
 
 A word game for the Nassau Weekly. Eight hidden five-letter words, each with a clue. 
 Every guess is checked against all eight at once, and letters light up wherever they're
@@ -31,27 +31,19 @@ You need [Node.js](https://nodejs.org) (the LTS version). Then, in VS Code:
 
 Edits to the code show up in the browser as soon as you save.
 
-## 2. Put it online with Vercel (free)
-
-1. Make a GitHub account if you don't have one, create a new repository, and upload this
-   folder to it (GitHub Desktop is the easiest way if you're new to git).
-2. Go to [vercel.com](https://vercel.com), sign in with GitHub, click **Add New → Project**,
-   and import the repository. Vercel detects Vite automatically. Click **Deploy**.
-3. You get a link like `nasscade.vercel.app`. Every time you push to GitHub, it redeploys.
-
-## 3. Put it on the WordPress site
+## 2. Embedding to WordPress site
 
 In WordPress, edit the page where the game should live (e.g. under "more → crosswords"),
 add a **Custom HTML** block, and paste this, replacing the URL with your Vercel link:
 
 ```html
-<iframe id="nasscade" src="https://YOUR-PROJECT.vercel.app/"
-  title="Nasscade" style="width:100%;border:0;height:1150px;display:block"
+<iframe id="Nassaule" src="https://YOUR-PROJECT.vercel.app/"
+  title="Nassaule" style="width:100%;border:0;height:1150px;display:block"
   allow="clipboard-write"></iframe>
 <script>
   window.addEventListener('message', function (e) {
-    if (e.data && e.data.type === 'nasscade:height') {
-      document.getElementById('nasscade').style.height = e.data.height + 'px';
+    if (e.data && e.data.type === 'Nassaule:height') {
+      document.getElementById('Nassaule').style.height = e.data.height + 'px';
     }
   });
 </script>
@@ -65,7 +57,7 @@ On phones the full-page version is nicer, because the keyboard stays pinned to t
 the screen. Consider also linking straight to the Vercel URL (or a subdomain like
 `games.nassauweekly.com`, if whoever manages the domain can point it at Vercel).
 
-## 4. Publishing a new puzzle each week
+## 3. Publishing a new puzzle each week
 
 1. Open `/builder.html` on the live site (or locally).
 2. Fill in the title, publish date and eight words with clues. Watch **"How well it
@@ -114,12 +106,12 @@ There is no backend. A shared leaderboard would be the first thing to need one.
 
 ## Credits
 
-Nasscade is inspired by [Rushle](https://rushle.io), a daily word game by
+Nassaule is inspired by [Rushle](https://rushle.io), a daily word game by
 u/wallshark (AKA Brandon). ([original post on r/wordgames](https://www.reddit.com/r/wordgames/comments/1s7qlwx/i_built_a_daily_word_game_where_one_guess_can/)).
 Its core idea is the one we built on: every guess is checked against all the
 hidden words at once, letters only light up in their exact position, and solving
 one word cascades letters into the rest.
 
-What Nasscade changes: eight words instead of twenty-six, a clue for every word
+What Nassaule changes: eight words instead of twenty-six, a clue for every word
 written by the Nass, a count-up clock instead of a miss limit, and styling to
 match the Nassau Weekly. If you like this, go play the original!
